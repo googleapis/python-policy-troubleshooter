@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-policy-troubleshooter.git",
-        "sha": "269747e5a2c5905919fbaa9f6fe527af52c7ada0"
+        "sha": "2438b21ae4d9e1888c797e27f1f7776d27c9dc32"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c3918feb2415878ac428d728fb473ed4187b7819",
-        "internalRef": "365166289"
+        "sha": "1a7d7641a161bec4d5ab13b7ff5590ed8ba26d96",
+        "internalRef": "366823379"
       }
     },
     {
@@ -105,7 +105,6 @@
     "docs/policytroubleshooter_v1/iam_checker.rst",
     "docs/policytroubleshooter_v1/services.rst",
     "docs/policytroubleshooter_v1/types.rst",
-    "google-cloud-policytroubleshooter-v1-py.tar.gz",
     "google/cloud/policytroubleshooter/__init__.py",
     "google/cloud/policytroubleshooter/py.typed",
     "google/cloud/policytroubleshooter_v1/__init__.py",
