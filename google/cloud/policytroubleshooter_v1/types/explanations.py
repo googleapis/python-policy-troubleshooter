@@ -117,7 +117,7 @@ class ExplainedPolicy(proto.Message):
             For examples of full resource names for Google Cloud
             services, see
             https://cloud.google.com/iam/help/troubleshooter/full-resource-names.
-        policy (google.iam.v1.policy_pb2.Policy):
+        policy_ (google.iam.v1.policy_pb2.Policy):
             The IAM policy attached to the resource.
             If the sender of the request does not have
             access to the policy, this field is empty.
@@ -140,7 +140,7 @@ class ExplainedPolicy(proto.Message):
 
     full_resource_name = proto.Field(proto.STRING, number=2)
 
-    policy = proto.Field(proto.MESSAGE, number=3, message=gi_policy.Policy,)
+    policy_ = proto.Field(proto.MESSAGE, number=3, message=gi_policy.Policy,)
 
     binding_explanations = proto.RepeatedField(
         proto.MESSAGE, number=4, message="BindingExplanation",
