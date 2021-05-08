@@ -6,6 +6,7 @@
     "issue_tracker": "",
     "release_level": "beta",
     "language": "python",
+    "library_type": "GAPIC_AUTO",
     "repo": "googleapis/python-policy-troubleshooter",
     "distribution_name": "google-cloud-policy-troubleshooter",
     "api_id": "policytroubleshooter.googleapis.com"
