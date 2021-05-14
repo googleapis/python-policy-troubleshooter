@@ -13,21 +13,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from collections import OrderedDict
-from typing import Dict, Type
-
-from .base import IamCheckerTransport
-from .grpc import IamCheckerGrpcTransport
-from .grpc_asyncio import IamCheckerGrpcAsyncIOTransport
-
-
-# Compile a registry of transports.
-_transport_registry = OrderedDict()  # type: Dict[str, Type[IamCheckerTransport]]
-_transport_registry['grpc'] = IamCheckerGrpcTransport
-_transport_registry['grpc_asyncio'] = IamCheckerGrpcAsyncIOTransport
-
-__all__ = (
-    'IamCheckerTransport',
-    'IamCheckerGrpcTransport',
-    'IamCheckerGrpcAsyncIOTransport',
-)
