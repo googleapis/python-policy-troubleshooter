@@ -20,7 +20,7 @@ import os
 import setuptools  # type: ignore
 
 name = "google-cloud-policy-troubleshooter"
-version = "0.1.0"
+version = "0.2.0"
 description = "IAM Policy Troubleshooter API client library"
 release_status = "Development Status :: 5 - Production/Stable"
 url = "https://github.com/googleapis/python-policy-troubleshooter"
@@ -29,6 +29,7 @@ dependencies = [
     "libcst >= 0.2.5",
     "proto-plus >= 1.15.0",
     "grpc-google-iam-v1",
+    "packaging >= 14.3",
 ]
 
 package_root = os.path.abspath(os.path.dirname(__file__))
