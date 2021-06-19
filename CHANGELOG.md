@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.1](https://www.github.com/googleapis/python-policy-troubleshooter/compare/v1.0.0...v1.0.1) (2021-06-19)
+
+
+### Documentation
+
+* omit mention of Python 2.7 in 'CONTRIBUTING.rst' ([#1127](https://www.github.com/googleapis/python-policy-troubleshooter/issues/1127)) ([#30](https://www.github.com/googleapis/python-policy-troubleshooter/issues/30)) ([da0adc2](https://www.github.com/googleapis/python-policy-troubleshooter/commit/da0adc2d0c05be77f06f21e0f34a0d35705832b2))
+
 ## [1.0.0](https://www.github.com/googleapis/python-policy-troubleshooter/compare/v0.2.0...v1.0.0) (2021-06-02)
 
 
