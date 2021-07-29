@@ -3,14 +3,14 @@
 ### [1.1.2](https://www.github.com/googleapis/python-policy-troubleshooter/compare/v1.1.1...v1.1.2) (2021-07-29)
 
 
-### Features
-
-* add Samples section to CONTRIBUTING.rst ([#44](https://www.github.com/googleapis/python-policy-troubleshooter/issues/44)) ([a5f4794](https://www.github.com/googleapis/python-policy-troubleshooter/commit/a5f4794092eff9553c847ff65f4e6e1c0d0a5b92))
-
-
 ### Bug Fixes
 
 * enable self signed jwt for grpc ([#48](https://www.github.com/googleapis/python-policy-troubleshooter/issues/48)) ([7186a42](https://www.github.com/googleapis/python-policy-troubleshooter/commit/7186a42e94fd09b663062a09dd3f7baa8906e497))
+
+
+### Documentation
+
+* add Samples section to CONTRIBUTING.rst ([#44](https://www.github.com/googleapis/python-policy-troubleshooter/issues/44)) ([a5f4794](https://www.github.com/googleapis/python-policy-troubleshooter/commit/a5f4794092eff9553c847ff65f4e6e1c0d0a5b92))
 
 
 ### Miscellaneous Chores
