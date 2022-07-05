@@ -972,7 +972,6 @@ def test_iam_checker_transport_auth_adc(transport_class):
     [
         transports.IamCheckerGrpcTransport,
         transports.IamCheckerGrpcAsyncIOTransport,
-        transports.IamCheckerRestTransport,
     ],
 )
 def test_iam_checker_transport_auth_gdch_credentials(transport_class):
