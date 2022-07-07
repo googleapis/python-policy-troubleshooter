@@ -3,7 +3,7 @@ Python Client for IAM Policy Troubleshooter API API
 
 |stable| |pypi| |versions|
 
-`IAM Policy Troubleshooter API API`_: 
+`IAM Policy Troubleshooter API API`_: makes it easier to understand why a user has access to a resource or doesn't have permission to call an API. Given an email, resource, and permission, Policy Troubleshooter examines all Identity and Access Management (IAM) policies that apply to the resource. It then reveals whether the member's roles include the permission on that resource and, if so, which policies bind the member to those roles.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
