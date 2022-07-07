@@ -21,15 +21,12 @@ import os
 import setuptools  # type: ignore
 
 name = "google-cloud-policy-troubleshooter"
-version = "1.4.2"
+version = "1.5.0"
 description = "IAM Policy Troubleshooter API client library"
 release_status = "Development Status :: 5 - Production/Stable"
 url = "https://github.com/googleapis/python-policy-troubleshooter"
 dependencies = [
-    # NOTE: Maintainers, please do not require google-api-core>=2.x.x
-    # Until this issue is closed
-    # https://github.com/googleapis/google-cloud-python/issues/10566
-    "google-api-core[grpc] >= 1.31.5, <3.0.0dev,!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0",
+    "google-api-core[grpc] >= 2.8.0, <3.0.0dev",
     "proto-plus >= 1.15.0, <2.0.0dev",
     "protobuf >=4.21.1, <4.22.0",
     "grpc-google-iam-v1 >=0.12.4, <1.0.0dev",
@@ -55,12 +52,11 @@ setuptools.setup(
     platforms="Posix; MacOS X; Windows",
     include_package_data=True,
     install_requires=dependencies,
-    python_requires=">=3.6",
+    python_requires=">=3.7",
     classifiers=[
         release_status,
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
