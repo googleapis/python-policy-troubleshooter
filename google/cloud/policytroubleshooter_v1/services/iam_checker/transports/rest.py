@@ -14,24 +14,21 @@
 # limitations under the License.
 #
 
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import rest_streaming
-from google.api_core import path_template
-from google.api_core import gapic_v1
-
-from google.protobuf import json_format
-from requests import __version__ as requests_version
 import dataclasses
+import json  # type: ignore
 import re
 from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
+
+from google.api_core import gapic_v1, path_template, rest_helpers, rest_streaming
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+from google.protobuf import json_format
+import grpc  # type: ignore
+from requests import __version__ as requests_version
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
@@ -41,8 +38,8 @@ except AttributeError:  # pragma: NO COVER
 
 from google.cloud.policytroubleshooter_v1.types import checker
 
-from .base import IamCheckerTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
-
+from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
+from .base import IamCheckerTransport
 
 DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     gapic_version=BASE_DEFAULT_CLIENT_INFO.gapic_version,
@@ -79,7 +76,12 @@ class IamCheckerRestInterceptor:
 
 
     """
-    def pre_troubleshoot_iam_policy(self, request: checker.TroubleshootIamPolicyRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[checker.TroubleshootIamPolicyRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_troubleshoot_iam_policy(
+        self,
+        request: checker.TroubleshootIamPolicyRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[checker.TroubleshootIamPolicyRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for troubleshoot_iam_policy
 
         Override in a subclass to manipulate the request or metadata
@@ -87,7 +89,9 @@ class IamCheckerRestInterceptor:
         """
         return request, metadata
 
-    def post_troubleshoot_iam_policy(self, response: checker.TroubleshootIamPolicyResponse) -> checker.TroubleshootIamPolicyResponse:
+    def post_troubleshoot_iam_policy(
+        self, response: checker.TroubleshootIamPolicyResponse
+    ) -> checker.TroubleshootIamPolicyResponse:
         """Post-rpc interceptor for troubleshoot_iam_policy
 
         Override in a subclass to manipulate the response
@@ -119,20 +123,21 @@ class IamCheckerRestTransport(IamCheckerTransport):
 
     """
 
-    def __init__(self, *,
-            host: str = 'policytroubleshooter.googleapis.com',
-            credentials: Optional[ga_credentials.Credentials] = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            client_cert_source_for_mtls: Optional[Callable[[
-                ], Tuple[bytes, bytes]]] = None,
-            quota_project_id: Optional[str] = None,
-            client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
-            always_use_jwt_access: Optional[bool] = False,
-            url_scheme: str = 'https',
-            interceptor: Optional[IamCheckerRestInterceptor] = None,
-            api_audience: Optional[str] = None,
-            ) -> None:
+    def __init__(
+        self,
+        *,
+        host: str = "policytroubleshooter.googleapis.com",
+        credentials: Optional[ga_credentials.Credentials] = None,
+        credentials_file: Optional[str] = None,
+        scopes: Optional[Sequence[str]] = None,
+        client_cert_source_for_mtls: Optional[Callable[[], Tuple[bytes, bytes]]] = None,
+        quota_project_id: Optional[str] = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
+        always_use_jwt_access: Optional[bool] = False,
+        url_scheme: str = "https",
+        interceptor: Optional[IamCheckerRestInterceptor] = None,
+        api_audience: Optional[str] = None,
+    ) -> None:
         """Instantiate the transport.
 
         Args:
@@ -171,7 +176,9 @@ class IamCheckerRestTransport(IamCheckerTransport):
         # credentials object
         maybe_url_match = re.match("^(?P<scheme>http(?:s)?://)?(?P<host>.*)$", host)
         if maybe_url_match is None:
-            raise ValueError(f"Unexpected hostname structure: {host}")  # pragma: NO COVER
+            raise ValueError(
+                f"Unexpected hostname structure: {host}"
+            )  # pragma: NO COVER
 
         url_match_items = maybe_url_match.groupdict()
 
@@ -182,10 +189,11 @@ class IamCheckerRestTransport(IamCheckerTransport):
             credentials=credentials,
             client_info=client_info,
             always_use_jwt_access=always_use_jwt_access,
-            api_audience=api_audience
+            api_audience=api_audience,
         )
         self._session = AuthorizedSession(
-            self._credentials, default_host=self.DEFAULT_HOST)
+            self._credentials, default_host=self.DEFAULT_HOST
+        )
         if client_cert_source_for_mtls:
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._interceptor = interceptor or IamCheckerRestInterceptor()
@@ -195,12 +203,14 @@ class IamCheckerRestTransport(IamCheckerTransport):
         def __hash__(self):
             return hash("TroubleshootIamPolicy")
 
-        def __call__(self,
-                request: checker.TroubleshootIamPolicyRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> checker.TroubleshootIamPolicyResponse:
+        def __call__(
+            self,
+            request: checker.TroubleshootIamPolicyRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> checker.TroubleshootIamPolicyResponse:
             r"""Call the troubleshoot iam policy method over HTTP.
 
             Args:
@@ -221,45 +231,50 @@ class IamCheckerRestTransport(IamCheckerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1/iam:troubleshoot',
-                'body': '*',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1/iam:troubleshoot",
+                    "body": "*",
+                },
             ]
-            request, metadata = self._interceptor.pre_troubleshoot_iam_policy(request, metadata)
+            request, metadata = self._interceptor.pre_troubleshoot_iam_policy(
+                request, metadata
+            )
             pb_request = checker.TroubleshootIamPolicyRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -275,12 +290,14 @@ class IamCheckerRestTransport(IamCheckerTransport):
             return resp
 
     @property
-    def troubleshoot_iam_policy(self) -> Callable[
-            [checker.TroubleshootIamPolicyRequest],
-            checker.TroubleshootIamPolicyResponse]:
+    def troubleshoot_iam_policy(
+        self,
+    ) -> Callable[
+        [checker.TroubleshootIamPolicyRequest], checker.TroubleshootIamPolicyResponse
+    ]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._TroubleshootIamPolicy(self._session, self._host, self._interceptor) # type: ignore
+        return self._TroubleshootIamPolicy(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
     def kind(self) -> str:
@@ -290,6 +307,4 @@ class IamCheckerRestTransport(IamCheckerTransport):
         self._session.close()
 
 
-__all__=(
-    'IamCheckerRestTransport',
-)
+__all__ = ("IamCheckerRestTransport",)
